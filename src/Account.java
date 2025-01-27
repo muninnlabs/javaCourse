@@ -1,7 +1,7 @@
 public class Account {
 
     private final int number;
-    private String holder;
+    private final String holder;
     private double balance;
 
     public Account(int number, String holder) {

@@ -15,6 +15,5 @@ public class Main {
         System.out.printf("PI value: %.2f%n", Calculator.PI);
 
         sc.close();
-
     }
 }

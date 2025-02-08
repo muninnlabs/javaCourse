@@ -3,17 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the radius: ");
-        double radius = sc.nextDouble();
+        String[] names = new String[] { "John", "David", "George", "Ronald", "Harry" };
 
-        double c = Calculator.cirumference(radius);
-        double v = Calculator.volume(radius);
 
-        System.out.printf("Circumference: %.2f%n", c);
-        System.out.printf("Volume: %.2f%n", v);
-        System.out.printf("PI value: %.2f%n", Calculator.PI);
+        for(int i = 0; i < names.length; i++) {
+            System.out.println(names[i]);
+        }
+        System.out.println("************");
+        for(String name : names) {
+            System.out.println(name);
+        }
 
-        sc.close();
     }
 }

@@ -2,18 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        int x = 20;
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the radius: ");
-        double radius = sc.nextDouble();
+        Integer obj = x; // Autoboxing
 
-        double c = Calculator.cirumference(radius);
-        double v = Calculator.volume(radius);
+        System.out.println(obj);
 
-        System.out.printf("Circumference: %.2f%n", c);
-        System.out.printf("Volume: %.2f%n", v);
-        System.out.printf("PI value: %.2f%n", Calculator.PI);
+        int y = obj; // Unboxing
 
-        sc.close();
+        System.out.println(y);
+
     }
 }

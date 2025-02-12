@@ -4,15 +4,26 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the radius: ");
-        double radius = sc.nextDouble();
+        System.out.println("Enter the number of elements in the vector: ");
+        int n = sc.nextInt();
 
-        double c = Calculator.cirumference(radius);
-        double v = Calculator.volume(radius);
+        int[][] vect = new int[n][n];
 
-        System.out.printf("Circumference: %.2f%n", c);
-        System.out.printf("Volume: %.2f%n", v);
-        System.out.printf("PI value: %.2f%n", Calculator.PI);
+        System.out.println("Enter the elements of the vector: ");
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                vect[i][j] = sc.nextInt();
+            }
+        }
+
+
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += vect[i][i];
+        }
+
+        System.out.println("The sum of the main diagonal elements is: " + sum);
+
 
         sc.close();
     }

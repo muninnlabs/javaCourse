@@ -1,25 +1,21 @@
 package entities;
 
-public class Department
-{
-    String name;
+public class Department {
 
-    public Department()
-    {
+    private String name;
+
+    public Department() {
     }
 
-    public Department(String name)
-    {
+    public Department(String name) {
         this.name = name;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
 

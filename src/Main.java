@@ -1,10 +1,9 @@
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.io.*;
+import java.text.ParseException;
+import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
 
         Set<String> set = new HashSet<>();
         set.add("TV");
@@ -16,6 +15,8 @@ public class Main {
         }
 
         setFilters();
+
+        mapStructure();
 
     }
 
@@ -35,5 +36,45 @@ public class Main {
         e.removeAll(b);
         System.out.println(e);
 
+    }
+
+    public static void mapStructure() {
+        Scanner sc = new Scanner(System.in);
+
+        Map<String, Integer> votes = new LinkedHashMap<>();
+
+
+        String rootPath = new File("").getAbsolutePath();
+        String path = rootPath + "\\src\\resources\\in.txt";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+
+            String line = br.readLine();
+            while (line != null) {
+
+                String[] fields = line.split(",");
+                String name = fields[0];
+                int count = Integer.parseInt(fields[1]);
+
+                if (votes.containsKey(name)) {
+                    int votesSoFar = votes.get(name);
+                    votes.put(name, count + votesSoFar);
+                }
+                else {
+                    votes.put(name, count);
+                }
+
+                line = br.readLine();
+            }
+
+            for (String key : votes.keySet()) {
+                System.out.println(key + ": " + votes.get(key));
+            }
+
+        } catch (IOException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        sc.close();
     }
 }
